@@ -24,7 +24,11 @@ label start:
 
     # These display lines of dialogue.
 
+<<<<<<< HEAD
     e "Aliyah."
+=======
+    e "This is sample text inputted by Aliyah."
+>>>>>>> 79f23f2af9997175f77dee1593004ed21a5284f7
 
     e "Once you add a story, pictures, and music, you can release it to the world!"
 
