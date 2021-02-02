@@ -3,8 +3,10 @@
 # Declare characters used by this game. The color argument colorizes the
 # name of the character.
 
-define e = Character("Eileen")
+define j = Character("Jason")
+image jason = im.Scale("images/support_male_jason.png", 660, 660)
 
+image fao = im.Scale("images/aldrich_hall.jpg", 1300, 900)
 
 # The game starts here.
 
@@ -14,23 +16,21 @@ label start:
     # add a file (named either "bg room.png" or "bg room.jpg") to the
     # images directory to show it.
 
-    scene bg room
+    scene fao
 
     # This shows a character sprite. A placeholder is used, but you can
     # replace it by adding a file named "eileen happy.png" to the images
     # directory.
 
-    show eileen happy
+    show jason at left
 
     # These display lines of dialogue.
 
-    e "Aliyah."
+    j "My name is Jason."
 
-    e "This is sample text inputted by Aliyah."
+    j "I am one of the supporting male characters in your visual novel inputted by Aliyah."
 
-    e "Once you add a story, pictures, and music, you can release it to the world!"
-
-    e "Inputted text by Aliyah again. Have fun developing this visual novel!"
+    j "See you real soon!"
 
     # This ends the game.
 
