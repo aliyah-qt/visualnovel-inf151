@@ -1,15 +1,15 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
-While loading <'Scale' <'Image' u'images/bren_events_center.jpg'> 1300 800 True>:
-  File "game/script.rpy", line 92, in script
-    with dissolve
-IOError: Couldn't find file 'images/bren_events_center.jpg'.
+While running game code:
+  File "game/script.rpy", line 33, in script
+    with fade
+IOError: Couldn't find file 'bensound-adventure.mp3'.
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 92, in script
-    with dissolve
+  File "game/script.rpy", line 33, in script
+    with fade
   File "renpy/ast.py", line 1388, in execute
     renpy.exports.with_statement(trans, paired)
   File "renpy/exports.py", line 1640, in with_statement
@@ -18,49 +18,19 @@ Full traceback:
     clear=clear)
   File "renpy/display/core.py", line 2978, in interact
     repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, **kwargs)
-  File "renpy/display/core.py", line 3477, in interact_core
-    self.draw_screen(root_widget, fullscreen_video, (not fullscreen_video) or video_frame_drawn)
-  File "renpy/display/core.py", line 2359, in draw_screen
-    renpy.config.screen_height,
-  File "render.pyx", line 492, in renpy.display.render.render_screen
-  File "render.pyx", line 263, in renpy.display.render.render
-  File "renpy/display/layout.py", line 751, in render
-    surf = render(child, width, height, cst, cat)
-  File "render.pyx", line 170, in renpy.display.render.render
-  File "render.pyx", line 263, in renpy.display.render.render
-  File "renpy/display/transition.py", line 368, in render
-    top = render(self.new_widget, width, height, st, at)
-  File "render.pyx", line 170, in renpy.display.render.render
-  File "render.pyx", line 263, in renpy.display.render.render
-  File "renpy/display/layout.py", line 751, in render
-    surf = render(child, width, height, cst, cat)
-  File "render.pyx", line 170, in renpy.display.render.render
-  File "render.pyx", line 263, in renpy.display.render.render
-  File "renpy/display/layout.py", line 751, in render
-    surf = render(child, width, height, cst, cat)
-  File "render.pyx", line 170, in renpy.display.render.render
-  File "render.pyx", line 263, in renpy.display.render.render
-  File "renpy/display/transform.py", line 927, in render
-    return transform_render(self, width, height, st, at)
-  File "accelerator.pyx", line 116, in renpy.display.accelerator.transform_render
-  File "render.pyx", line 263, in renpy.display.render.render
-  File "renpy/display/image.py", line 501, in render
-    return wrap_render(self.target, width, height, st, at)
-  File "renpy/display/image.py", line 307, in wrap_render
-    rend = render(child, w, h, st, at)
-  File "render.pyx", line 170, in renpy.display.render.render
-  File "render.pyx", line 263, in renpy.display.render.render
-  File "renpy/display/im.py", line 607, in render
-    return cache.get(self, render=True)
-  File "renpy/display/im.py", line 271, in get
-    surf = image.load()
-  File "renpy/display/im.py", line 846, in load
-    child = cache.get(self.image)
-  File "renpy/display/im.py", line 271, in get
-    surf = image.load()
-  File "renpy/display/im.py", line 651, in load
-    filelike = renpy.loader.load(self.filename)
+  File "renpy/display/core.py", line 3660, in interact_core
+    renpy.audio.audio.periodic()
+  File "renpy/audio/audio.py", line 1106, in periodic
+    raise_(exc[0], exc[1], exc[2])
+  File "renpy/audio/audio.py", line 1084, in periodic_thread_main
+    periodic_pass()
+  File "renpy/audio/audio.py", line 1026, in periodic_pass
+    c.periodic()
+  File "renpy/audio/audio.py", line 492, in periodic
+    topf = load(self.file_prefix + filename + self.file_suffix)
+  File "renpy/audio/audio.py", line 74, in load
+    rv = renpy.loader.load(fn)
   File "renpy/loader.py", line 766, in load
     raise IOError("Couldn't find file '%s'." % name)
-IOError: Couldn't find file 'images/bren_events_center.jpg'.
+IOError: Couldn't find file 'bensound-adventure.mp3'.
 
