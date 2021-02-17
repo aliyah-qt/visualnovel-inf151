@@ -2,9 +2,7 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 24: expected statement.
-    @scene fao
-     ^
+File "game/script.rpy", line 128: indentation mismatch.
 
 Ren'Py Version: Ren'Py 7.4.0.1167
-Mon Feb 15 16:52:25 2021
+Tue Feb 16 21:37:03 2021
