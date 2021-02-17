@@ -113,7 +113,7 @@ label start:
     viv "I think they do. The full name of the UCI building is: The Office of
     Financial Aid and Scholarships."
 
-    "Vivian turns to look at me with a curious look in her eyes"
+    "{i}Vivian turns to look at me with a curious look in her eyes{/i}"
 
     viv "Do you need any scholarships?"
 
@@ -123,25 +123,83 @@ label start:
 
     j "I hope we'll find more information there..."
 
-######
-#    scene fao
-#     with fade
-    # fao stand for financial aid office
+   # fao stand for financial aid office
+    scene fao
+    with fade
 
     # This shows a character sprite. A placeholder is used, but you can
     # replace it by adding a file named "eileen happy.png" to the images
     # directory.
 
-#    show jason at left
+    show jason at left
+    show vivian at right
 
     # These display lines of dialogue.
 
-#    j "My name is Jason."
+    MC "Here we are."
 
-#    j "I am one of the supporting male characters in your visual novel inputted by Aliyah."
+    j "Hm...there's no one around."
 
-#    j "See you real soon!"
+    viv "I guess the robots really took control of everything."
 
+    MC "Let's look around for information. We may find what we need on those
+    catalogues and flyers."
+
+    viv "Yes, we can split up. Jason and I will take this floor while you and
+    OTHER SUPPORTING CHARACTER take the other floor."
+
+    j "Sure, let's get to work."
+
+    # some stuff happens here
+
+    j "Check this out! You are supposed to pay your tuition here too. I guess
+    you will come back to this building after all, Mr/Ms SelfSufficient."
+
+    MC "Heh. Fine by me."
+
+    viv "{b}So you're supposed to pay all your fees even before the first day of school,
+    otherwise your classes will get dropped.{/b} How about that?"
+
+    # other supporting character "Hehe. FAFSA got my back. I don't have to worry
+    # about paying on time you know"
+
+    MC "Wow, that's very nice of tem. I wonder if I am eligible for aid if I apply."
+
+    "{i}Jason turns to you with a wide smirk on his face{/i}"
+
+    j "What's wrong? You don't feel self-sufficient anymore?"
+
+    MC "I can be in need and self-sufficient at the same time you know?"
+
+    j "Sure. Quick tip: If you have to ask if you qualify, you probably don't."
+
+    MC "By the way, how do they determine if I am eligible for aid or not?"
+
+    viv "Oh, I found it here! {b}Basically all you have to do is apply for it using
+    the MyAid section at{/b} INSERT_HYPERLINK."
+
+    viv "They will automatically determine whether you qualify for financial aid."
+
+    j "That sounds simple enough."
+
+    viv "Look at this. You don't even have to enroll full-time to receive aid."
+
+    j "Interesting. Even though we're supposed to pay less for part time enrollment,
+    right?"
+
+    # need to figure out how to display 50%
+    viv "Yes. Looks like{b}you only pay half the price of a maximum of 10 units
+    of undergraduate courses, and 8 units of graduate courses{/b}."
+
+    MC "That sounds reasonable."
+
+    j "Wait, what if we only do part time study? If I cannot afford to take the
+    maximum of 20 units every term, would going part-time maximize the cost per
+    unit for me?"
+
+    viv "Errr...I think you are right."
+
+    MC "So what is stopping us?"
 
     # This ends the game.
 
