@@ -3,7 +3,8 @@
 # Declare characters used by this game. The color argument colorizes the
 # name of the character.
 
-define MC = Character("Main Character")
+# MC stands for main character
+define MC = Character("Me")
 
 define j = Character("Jason")
 image jason = im.Scale("images/jason.png", 660, 660)
