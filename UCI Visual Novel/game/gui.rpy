@@ -23,7 +23,9 @@ init python:
 ## The colors of text in the interface.
 
 ## An accent color used throughout the interface to label and highlight text.
-define gui.accent_color = u'#FFD200'
+# UCI color yellow: #FFD200
+# UCI color blue: #0064A4
+define gui.accent_color = u'#0064A4'
 
 ## The color used for a text button when it is neither selected nor hovered.
 define gui.idle_color = u'#888888'
@@ -85,9 +87,7 @@ define gui.title_text_size = 50
 ## Main and Game Menus #########################################################
 
 ## The images used for the main and game menus.
-#define gui.main_menu_background = "gui/main_menu.png"
 define gui.main_menu_background = im.Scale("images/aldrich_park.jpg", 1300, 800)
-#define gui.game_menu_background = "gui/game_menu.png"
 
 
 ## Dialogue ####################################################################
@@ -96,7 +96,8 @@ define gui.main_menu_background = im.Scale("images/aldrich_park.jpg", 1300, 800)
 ## time.
 
 ## The height of the textbox containing dialogue.
-define gui.textbox_height = 185
+# Default was at 185. Will not adjust lower than 180
+define gui.textbox_height = 180
 
 ## The placement of the textbox vertically on the screen. 0.0 is the top, 0.5 is
 ## center, and 1.0 is the bottom.
