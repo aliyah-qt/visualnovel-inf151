@@ -158,6 +158,10 @@ define config.window_icon = "gui/window_icon.png"
 ## This section controls how Ren'Py turns your project into distribution files.
 
 init python:
+    config.keymap['dismiss'] = ['K_RIGHT']
+    config.keymap['dismiss'].append('K_SPACE')
+    config.keymap['dismiss'].append('K_KP_ENTER')
+    config.keymap['dismiss'].append('K_RETURN')
 
     ## The following functions take file patterns. File patterns are case-
     ## insensitive, and matched against the path relative to the base directory,
