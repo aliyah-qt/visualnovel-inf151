@@ -61,8 +61,7 @@ define config.sample_sound = "sample-sound.ogg"
 ## the player is at the main menu. This file will continue playing into the
 ## game, until it is stopped or another file is played.
 
-# define config.main_menu_music = "main-menu-theme.ogg"
-
+define config.main_menu_music = "audio/bensound-adventure.mp3"
 
 ## Transitions #################################################################
 ##
