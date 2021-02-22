@@ -4,7 +4,7 @@
 # name of the character.
 
 # MC stands for main character
-define MC = Character("Me")
+define MC = Character("[name]")
 
 define j = Character("Jason")
 image jason = im.Scale("images/jason.png", 660, 660)
@@ -24,6 +24,11 @@ image map = im.Scale("images/UCI_campus_map.jpg", 1300, 800)
 # The game starts here.
 
 label start:
+
+    python:
+        name = renpy.input("What's your name?")
+
+        name = name.strip() or "Me"
 
     # Show a background. This uses a placeholder by default, but you can
     # add a file (named either "bg room.png" or "bg room.jpg") to the
@@ -116,7 +121,7 @@ label start:
 
     "{i}Vivian turns to look at me with a curious look in her eyes{/i}"
 
-    viv "Do you need any scholarships?"
+    viv "[name], do you need any scholarships?"
 
     MC "Yeah. But if I don't get it, will I ever visit this building again?"
 
@@ -146,7 +151,7 @@ label start:
     MC "Let's look around for information. We may find what we need on those
     catalogues and flyers."
 
-    viv "Yes, we can split up. Jason and I will take this floor while you and
+    viv "Yes, we can split up. Jason and I will take this floor while [name] and
     OTHER SUPPORTING CHARACTER take the other floor."
 
     j "Sure, let's get to work."
@@ -168,7 +173,7 @@ label start:
 
     "{i}Jason turns to you with a wide smirk on his face{/i}"
 
-    j "What's wrong? You don't feel self-sufficient anymore?"
+    j "What's wrong [name]? You don't feel self-sufficient anymore?"
 
     MC "I can be in need and self-sufficient at the same time you know?"
 
@@ -176,8 +181,8 @@ label start:
 
     MC "By the way, how do they determine if I am eligible for aid or not?"
 
-    viv "Oh, I found it here! {b}Basically all you have to do is apply for it using
-    the MyAid section at{/b} INSERT_HYPERLINK."
+    viv "Oh, I found it here! Basically all you have to do is apply for it using
+    the MyAid section at {a=https://www.ofas.uci.edu/index.php}https://www.ofas.uci.edu/{/a}"
 
     viv "They will automatically determine whether you qualify for financial aid."
 

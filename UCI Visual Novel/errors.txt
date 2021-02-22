@@ -2,7 +2,13 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 128: indentation mismatch.
+File "game/script.rpy", line 28: expected statement.
+    name = renpy.input("What's your name?")
+         ^
+
+File "game/script.rpy", line 30: expected statement.
+    name = name.strip() or "Me"
+         ^
 
 Ren'Py Version: Ren'Py 7.4.0.1167
-Tue Feb 16 21:37:03 2021
+Sun Feb 21 20:33:10 2021
