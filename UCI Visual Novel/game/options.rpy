@@ -162,6 +162,7 @@ init python:
     config.keymap['dismiss'].append('K_SPACE')
     config.keymap['dismiss'].append('K_KP_ENTER')
     config.keymap['dismiss'].append('K_RETURN')
+    config.keymap['dismiss'].append('mousedown_1')
 
     ## The following functions take file patterns. File patterns are case-
     ## insensitive, and matched against the path relative to the base directory,
