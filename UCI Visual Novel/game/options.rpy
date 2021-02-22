@@ -30,7 +30,9 @@ define config.version = "1.0"
 ## triple-quotes, and leave a blank line between paragraphs.
 
 define gui.about = _p("""Created by INF 151 Group 1: Rachit Ahuja, Emerson Chow,
- Aliyah Clayton, Nham Dinh, and Kristine Nguyen.""")
+ Aliyah Clayton, Nham Dinh, and Kristine Nguyen.
+
+ Main menu music by www.bensound.com.""")
 
 
 ## A short name for the game used for executables and directories in the built
