@@ -1,4 +1,4 @@
-Wed Feb 24 13:41:17 2021
+Wed Feb 24 14:07:24 2021
 Windows-10-10.0.19041
 Ren'Py 7.4.0.1167
  
@@ -7,11 +7,11 @@ Bootstrap to the start of init.init took 0.07s
 Early init took 0.00s
 Loader init took 0.02s
 Loading error handling took 0.02s
-Loading script took 0.11s
-Loading save slot metadata. took 0.01s
+Loading script took 0.09s
+Loading save slot metadata. took 0.02s
 Loading persistent took 0.00s
 Importing _renpysteam: ImportError('No module named _renpysteam',)
-Running init code took 0.06s
+Running init code took 0.05s
 Loading analysis data took 0.02s
 Analyze and compile ATL took 0.00s
 Index archives took 0.00s
@@ -260,4 +260,4 @@ Texture testing:
 Screen sizes: virtual=(1280, 720) physical=(858, 483) drawable=(858, 483)
 Root FBO is: 0
 FBO Maximum Texture Size: 2048
-Total time until interface ready: 0.840761184692s
+Total time until interface ready: 0.815738916397s
