@@ -88,7 +88,7 @@ define gui.title_text_size = 50
 
 ## The images used for the main and game menus.
 define gui.main_menu_background = im.Scale("images/aldrich_park.jpg", 1300, 800)
-
+define gui.game_menu_background = im.Scale("images/aldrich_park.jpg", 1300, 800)
 
 ## Dialogue ####################################################################
 ##
