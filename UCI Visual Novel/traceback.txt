@@ -1,18 +1,84 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 184, in script
-    viv "Oh, I found it here! Basically all you have to do is apply for it using
-ValueError: unsupported format character 'a' (0x61) at index 161
+  File "game/screens.rpy", line 586, in execute
+    screen save():
+  File "game/screens.rpy", line 586, in execute
+    screen save():
+  File "game/screens.rpy", line 590, in execute
+    use file_slots(_("Save"))
+  File "game/screens.rpy", line 600, in execute
+    screen file_slots(title):
+  File "game/screens.rpy", line 600, in execute
+    screen file_slots(title):
+  File "game/screens.rpy", line 604, in execute
+    use game_menu(title):
+  File "game/screens.rpy", line 420, in execute
+    screen game_menu(title, scroll=None, yinitial=0.0):
+  File "game/screens.rpy", line 420, in execute
+    screen game_menu(title, scroll=None, yinitial=0.0):
+  File "game/screens.rpy", line 424, in execute
+    if main_menu:
+  File "game/screens.rpy", line 427, in execute
+    add gui.game_menu_background
+  File "game/screens.rpy", line 427, in <module>
+    add gui.game_menu_background
+AttributeError: 'StoreModule' object has no attribute 'game_menu_background'
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 184, in script
-    viv "Oh, I found it here! Basically all you have to do is apply for it using
-  File "renpy/ast.py", line 706, in execute
-    renpy.exports.say(who, what, *args, **kwargs)
-  File "renpy/exports.py", line 1373, in say
-    what = what % tag_quoting_dict
-ValueError: unsupported format character 'a' (0x61) at index 161
+  File "renpy/common/_layout/screen_load_save.rpym", line 35, in script
+    $ ui.interact()
+  File "renpy/ast.py", line 913, in execute
+    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
+  File "renpy/python.py", line 2111, in py_exec_bytecode
+    exec(bytecode, globals, locals)
+  File "renpy/common/_layout/screen_load_save.rpym", line 35, in <module>
+    $ ui.interact()
+  File "renpy/ui.py", line 298, in interact
+    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
+  File "renpy/display/core.py", line 2978, in interact
+    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, **kwargs)
+  File "renpy/display/core.py", line 3378, in interact_core
+    root_widget.visit_all(lambda i : i.per_interact())
+  File "renpy/display/core.py", line 566, in visit_all
+    d.visit_all(callback, seen)
+  File "renpy/display/core.py", line 566, in visit_all
+    d.visit_all(callback, seen)
+  File "renpy/display/core.py", line 566, in visit_all
+    d.visit_all(callback, seen)
+  File "renpy/display/core.py", line 566, in visit_all
+    d.visit_all(callback, seen)
+  File "renpy/display/screen.py", line 432, in visit_all
+    callback(self)
+  File "renpy/display/core.py", line 3378, in <lambda>
+    root_widget.visit_all(lambda i : i.per_interact())
+  File "renpy/display/screen.py", line 443, in per_interact
+    self.update()
+  File "renpy/display/screen.py", line 631, in update
+    self.screen.function(**self.scope)
+  File "game/screens.rpy", line 586, in execute
+    screen save():
+  File "game/screens.rpy", line 586, in execute
+    screen save():
+  File "game/screens.rpy", line 590, in execute
+    use file_slots(_("Save"))
+  File "game/screens.rpy", line 600, in execute
+    screen file_slots(title):
+  File "game/screens.rpy", line 600, in execute
+    screen file_slots(title):
+  File "game/screens.rpy", line 604, in execute
+    use game_menu(title):
+  File "game/screens.rpy", line 420, in execute
+    screen game_menu(title, scroll=None, yinitial=0.0):
+  File "game/screens.rpy", line 420, in execute
+    screen game_menu(title, scroll=None, yinitial=0.0):
+  File "game/screens.rpy", line 424, in execute
+    if main_menu:
+  File "game/screens.rpy", line 427, in execute
+    add gui.game_menu_background
+  File "game/screens.rpy", line 427, in <module>
+    add gui.game_menu_background
+AttributeError: 'StoreModule' object has no attribute 'game_menu_background'
 
