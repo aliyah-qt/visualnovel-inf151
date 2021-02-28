@@ -87,7 +87,7 @@ define gui.title_text_size = 50
 ## Main and Game Menus #########################################################
 
 ## The images used for the main and game menus.
-define gui.main_menu_background = im.Scale("images/aldrich_park.jpg", 1300, 800)
+define gui.main_menu_background = Movie(play = "videos/aldrichPark.ogv", loop =True, size=(1300,800))
 define gui.game_menu_background = im.Scale("images/aldrich_park.jpg", 1300, 800)
 
 ## Dialogue ####################################################################
