@@ -1,84 +1,26 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/screens.rpy", line 586, in execute
-    screen save():
-  File "game/screens.rpy", line 586, in execute
-    screen save():
-  File "game/screens.rpy", line 590, in execute
-    use file_slots(_("Save"))
-  File "game/screens.rpy", line 600, in execute
-    screen file_slots(title):
-  File "game/screens.rpy", line 600, in execute
-    screen file_slots(title):
-  File "game/screens.rpy", line 604, in execute
-    use game_menu(title):
-  File "game/screens.rpy", line 420, in execute
-    screen game_menu(title, scroll=None, yinitial=0.0):
-  File "game/screens.rpy", line 420, in execute
-    screen game_menu(title, scroll=None, yinitial=0.0):
-  File "game/screens.rpy", line 424, in execute
-    if main_menu:
-  File "game/screens.rpy", line 427, in execute
-    add gui.game_menu_background
-  File "game/screens.rpy", line 427, in <module>
-    add gui.game_menu_background
-AttributeError: 'StoreModule' object has no attribute 'game_menu_background'
+  File "game/script.rpy", line 297, in script
+    show peter_evil at Alright
+  File "game/script.rpy", line 297, in <module>
+    show peter_evil at Alright
+NameError: name 'Alright' is not defined
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "renpy/common/_layout/screen_load_save.rpym", line 35, in script
-    $ ui.interact()
-  File "renpy/ast.py", line 913, in execute
-    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
-  File "renpy/python.py", line 2111, in py_exec_bytecode
-    exec(bytecode, globals, locals)
-  File "renpy/common/_layout/screen_load_save.rpym", line 35, in <module>
-    $ ui.interact()
-  File "renpy/ui.py", line 298, in interact
-    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
-  File "renpy/display/core.py", line 2978, in interact
-    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, **kwargs)
-  File "renpy/display/core.py", line 3378, in interact_core
-    root_widget.visit_all(lambda i : i.per_interact())
-  File "renpy/display/core.py", line 566, in visit_all
-    d.visit_all(callback, seen)
-  File "renpy/display/core.py", line 566, in visit_all
-    d.visit_all(callback, seen)
-  File "renpy/display/core.py", line 566, in visit_all
-    d.visit_all(callback, seen)
-  File "renpy/display/core.py", line 566, in visit_all
-    d.visit_all(callback, seen)
-  File "renpy/display/screen.py", line 432, in visit_all
-    callback(self)
-  File "renpy/display/core.py", line 3378, in <lambda>
-    root_widget.visit_all(lambda i : i.per_interact())
-  File "renpy/display/screen.py", line 443, in per_interact
-    self.update()
-  File "renpy/display/screen.py", line 631, in update
-    self.screen.function(**self.scope)
-  File "game/screens.rpy", line 586, in execute
-    screen save():
-  File "game/screens.rpy", line 586, in execute
-    screen save():
-  File "game/screens.rpy", line 590, in execute
-    use file_slots(_("Save"))
-  File "game/screens.rpy", line 600, in execute
-    screen file_slots(title):
-  File "game/screens.rpy", line 600, in execute
-    screen file_slots(title):
-  File "game/screens.rpy", line 604, in execute
-    use game_menu(title):
-  File "game/screens.rpy", line 420, in execute
-    screen game_menu(title, scroll=None, yinitial=0.0):
-  File "game/screens.rpy", line 420, in execute
-    screen game_menu(title, scroll=None, yinitial=0.0):
-  File "game/screens.rpy", line 424, in execute
-    if main_menu:
-  File "game/screens.rpy", line 427, in execute
-    add gui.game_menu_background
-  File "game/screens.rpy", line 427, in <module>
-    add gui.game_menu_background
-AttributeError: 'StoreModule' object has no attribute 'game_menu_background'
+  File "game/script.rpy", line 297, in script
+    show peter_evil at Alright
+  File "renpy/ast.py", line 1182, in execute
+    show_imspec(self.imspec, atl=getattr(self, "atl", None))
+  File "renpy/ast.py", line 1141, in show_imspec
+    at_list = [ renpy.python.py_eval(i) for i in at_list ]
+  File "renpy/python.py", line 2142, in py_eval
+    return py_eval_bytecode(code, globals, locals)
+  File "renpy/python.py", line 2135, in py_eval_bytecode
+    return eval(bytecode, globals, locals)
+  File "game/script.rpy", line 297, in <module>
+    show peter_evil at Alright
+NameError: name 'Alright' is not defined
 
