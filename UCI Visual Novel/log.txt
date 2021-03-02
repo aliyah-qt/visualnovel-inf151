@@ -1,39 +1,38 @@
-Wed Feb 24 14:12:51 2021
+Mon Mar  1 19:33:47 2021
 Windows-10-10.0.19041
 Ren'Py 7.4.0.1167
  
 
-Bootstrap to the start of init.init took 0.08s
+Bootstrap to the start of init.init took 0.07s
 Early init took 0.00s
-Loader init took 0.02s
+Loader init took 0.03s
 Loading error handling took 0.02s
-Loading script took 0.24s
-Loading save slot metadata. took 0.01s
+Loading script took 0.11s
+Loading save slot metadata. took 0.03s
 Loading persistent took 0.00s
 Importing _renpysteam: ImportError('No module named _renpysteam',)
-Running init code took 0.05s
+Running init code took 0.06s
 Loading analysis data took 0.02s
 Analyze and compile ATL took 0.00s
 Index archives took 0.00s
-Backing up script files to 'C:\\Users\\Aliyah Faith\\AppData\\Roaming/RenPy/backups\\UCI Visual Novel':
 Dump and make backups. took 0.07s
 Cleaning cache took 0.00s
 Making clean stores took 0.00s
-Initial gc. took 0.02s
+Initial gc. took 0.03s
 DPI scale factor: 1.000000
 Creating interface object took 0.00s
 Cleaning stores took 0.00s
-Init translation took 0.03s
+Init translation took 0.04s
 Build styles took 0.00s
-Load screen analysis took 0.00s
-Analyze screens took 0.01s
-Save screen analysis took 0.07s
-Prepare screens took 0.06s
+Load screen analysis took 0.02s
+Analyze screens took 0.00s
+Save screen analysis took 0.00s
+Prepare screens took 0.05s
 Save pyanalysis. took 0.00s
 Save bytecode. took 0.03s
 Running _start took 0.00s
 Performance test:
-Interface start took 0.08s
+Interface start took 0.09s
 
 primary display bounds: (0, 0, 1920, 1080)
 swap interval: 1 frames
@@ -261,84 +260,11 @@ Texture testing:
 Screen sizes: virtual=(1280, 720) physical=(858, 483) drawable=(858, 483)
 Root FBO is: 0
 FBO Maximum Texture Size: 2048
-Total time until interface ready: 1.10578513145s
-
-Full traceback:
-  File "renpy/common/_layout/screen_load_save.rpym", line 35, in script
-    $ ui.interact()
-  File "renpy/ast.py", line 913, in execute
-    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
-  File "renpy/python.py", line 2111, in py_exec_bytecode
-    exec(bytecode, globals, locals)
-  File "renpy/common/_layout/screen_load_save.rpym", line 35, in <module>
-    $ ui.interact()
-  File "renpy/ui.py", line 298, in interact
-    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
-  File "renpy/display/core.py", line 2978, in interact
-    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, **kwargs)
-  File "renpy/display/core.py", line 3378, in interact_core
-    root_widget.visit_all(lambda i : i.per_interact())
-  File "renpy/display/core.py", line 566, in visit_all
-    d.visit_all(callback, seen)
-  File "renpy/display/core.py", line 566, in visit_all
-    d.visit_all(callback, seen)
-  File "renpy/display/core.py", line 566, in visit_all
-    d.visit_all(callback, seen)
-  File "renpy/display/core.py", line 566, in visit_all
-    d.visit_all(callback, seen)
-  File "renpy/display/screen.py", line 432, in visit_all
-    callback(self)
-  File "renpy/display/core.py", line 3378, in <lambda>
-    root_widget.visit_all(lambda i : i.per_interact())
-  File "renpy/display/screen.py", line 443, in per_interact
-    self.update()
-  File "renpy/display/screen.py", line 631, in update
-    self.screen.function(**self.scope)
-  File "game/screens.rpy", line 586, in execute
-    screen save():
-  File "game/screens.rpy", line 586, in execute
-    screen save():
-  File "game/screens.rpy", line 590, in execute
-    use file_slots(_("Save"))
-  File "game/screens.rpy", line 600, in execute
-    screen file_slots(title):
-  File "game/screens.rpy", line 600, in execute
-    screen file_slots(title):
-  File "game/screens.rpy", line 604, in execute
-    use game_menu(title):
-  File "game/screens.rpy", line 420, in execute
-    screen game_menu(title, scroll=None, yinitial=0.0):
-  File "game/screens.rpy", line 420, in execute
-    screen game_menu(title, scroll=None, yinitial=0.0):
-  File "game/screens.rpy", line 424, in execute
-    if main_menu:
-  File "game/screens.rpy", line 427, in execute
-    add gui.game_menu_background
-  File "game/screens.rpy", line 427, in <module>
-    add gui.game_menu_background
-AttributeError: 'StoreModule' object has no attribute 'game_menu_background'
-
-While running game code:
-  File "game/screens.rpy", line 586, in execute
-    screen save():
-  File "game/screens.rpy", line 586, in execute
-    screen save():
-  File "game/screens.rpy", line 590, in execute
-    use file_slots(_("Save"))
-  File "game/screens.rpy", line 600, in execute
-    screen file_slots(title):
-  File "game/screens.rpy", line 600, in execute
-    screen file_slots(title):
-  File "game/screens.rpy", line 604, in execute
-    use game_menu(title):
-  File "game/screens.rpy", line 420, in execute
-    screen game_menu(title, scroll=None, yinitial=0.0):
-  File "game/screens.rpy", line 420, in execute
-    screen game_menu(title, scroll=None, yinitial=0.0):
-  File "game/screens.rpy", line 424, in execute
-    if main_menu:
-  File "game/screens.rpy", line 427, in execute
-    add gui.game_menu_background
-  File "game/screens.rpy", line 427, in <module>
-    add gui.game_menu_background
-AttributeError: 'StoreModule' object has no attribute 'game_menu_background'
+Total time until interface ready: 0.990842103958s
+Cleaning stores took 0.00s
+Init translation took 0.00s
+Build styles took 0.01s
+Load screen analysis took 0.03s
+Analyze screens took 0.00s
+Prepare screens took 0.00s
+Running _start took 0.00s
