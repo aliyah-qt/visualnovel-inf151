@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/options.rpy", line 64: Line is indented, but the preceding define statement statement does not expect a block. Please check this line's indentation.
-    define config.main_menu_music = "bensound-adventure.mp3"
+File "game/script.rpy", line 321: expected menuitem
+    default result = False
     ^
 
 Ren'Py Version: Ren'Py 7.4.0.1167
-Sun Feb 21 21:51:31 2021
+Tue Mar  2 21:11:04 2021

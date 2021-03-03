@@ -1,26 +1,20 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 297, in script
-    show peter_evil at Alright
-  File "game/script.rpy", line 297, in <module>
-    show peter_evil at Alright
-NameError: name 'Alright' is not defined
+  File "game/script.rpy", line 382, in script
+    menu:
+ValueError: unsupported format character 't' (0x74) at index 4
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 297, in script
-    show peter_evil at Alright
-  File "renpy/ast.py", line 1182, in execute
-    show_imspec(self.imspec, atl=getattr(self, "atl", None))
-  File "renpy/ast.py", line 1141, in show_imspec
-    at_list = [ renpy.python.py_eval(i) for i in at_list ]
-  File "renpy/python.py", line 2142, in py_eval
-    return py_eval_bytecode(code, globals, locals)
-  File "renpy/python.py", line 2135, in py_eval_bytecode
-    return eval(bytecode, globals, locals)
-  File "game/script.rpy", line 297, in <module>
-    show peter_evil at Alright
-NameError: name 'Alright' is not defined
+  File "game/script.rpy", line 382, in script
+    menu:
+  File "renpy/ast.py", line 1633, in execute
+    choice = renpy.exports.menu(choices, self.set, args, kwargs, item_arguments)
+  File "renpy/exports.py", line 994, in menu
+    label = substitute(label)
+  File "renpy/exports.py", line 957, in substitute
+    return s % tag_quoting_dict
+ValueError: unsupported format character 't' (0x74) at index 4
 

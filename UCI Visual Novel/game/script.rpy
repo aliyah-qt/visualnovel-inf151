@@ -7,8 +7,9 @@
 define MC = Character("[name]")
 
 define p = Character("Peter The Anteater")
-image peter_default = im.Scale("images/anteater_left_default.png", 600, 600)
-image peter_evil = im.Scale("images/anteater_left_evil.png", 600, 600)
+image peter_left_default = im.Scale("images/anteater_left_default.png", 600, 600)
+image peter_left_evil = im.Scale("images/anteater_left_evil.png", 600, 600)
+image peter_right_evil = im.Scale("images/anteater_right_evil.png", 600, 600)
 
 define j = Character("Jason")
 image jason_fear = im.Scale("images/support_male_left_fear.png", 660, 660)
@@ -69,13 +70,13 @@ label start:
     "No, this is the correct time and place. The orientation should be starting
     soon. Maybe I should wait a few more minutes."
 
-    show peter_default at left
+    show peter_left_default at left
 
     "Huh? Are we supposed to cosplay for orientation?"
 
     p "Hello to all the new students and welcome to UCI Student Orientation 2021!"
 
-    show peter_evil at left
+    show peter_left_evil at left
 
     p "I am Peter The Anteater, the leader of the anteaters, and we have taken over UCI."
 
@@ -90,8 +91,8 @@ label start:
     p "You all have been sent the rules and objectives for today's quest on your devices.
        Good luck!"
 
-    hide peter_default
-    hide peter_evil
+    hide peter_left_default
+    hide peter_left_evil
 
     "As Peter The Anteater leaves, a very audible noise follows."
 
@@ -256,60 +257,168 @@ label start:
 
     j "Sounds good to me! Let's check out the map."
 
-    "{i}Eeeeeeeppp!{/i}"
+#    "{i}Eeeeeeeppp!{/i}"
 
-    "{i}You and Jason look at each other in fear before running towards the door{/i}"
+#    "{i}You and Jason look at each other in fear before running towards the door{/i}"
 
-    show vivian_fear at left
+#    show vivian_fear at left
 
-    viv "A- An-"
+#    viv "A- An-"
 
-    MC "I don't understand."
+#    MC "I don't understand."
 
-    j "Spit it out Vivian!"
+#    j "Spit it out Vivian!"
 
-    viv "Peter The Anteater is on the top floor."
+#    viv "Peter The Anteater is on the top floor."
 
-    MC "Did he say what he wants?"
+#    MC "Did he say what he wants?"
 
-    "{i}Vivian shakes her head while her eyes remain focused on the stairwell from which she came{/i}"
+#    "{i}Vivian shakes her head while her eyes remain focused on the stairwell from which she came{/i}"
 
-    viv "I was exploring the Registrar Office and he just appeared out of no where."
+#    viv "I was exploring the Registrar Office and he just appeared out of no where."
 
-    j "I'm just going to have to get it out of him then!"
+#    j "I'm just going to have to get it out of him then!"
 
-    hide jason_default
+#    hide jason_default
 
-    "{i}Before you know it, Jason quickly charges up the stairwell leaving you and Vivian behind{/i}"
+#    "{i}Before you know it, Jason quickly charges up the stairwell leaving you and Vivian behind{/i}"
 
-    viv "Wait, Jason!"
+#    viv "Wait, Jason!"
 
-    hide vivian_fear
+#    hide vivian_fear
 
-    "{i}Vivian runs after him leaving you all alone{/i}"
+#    "{i}Vivian runs after him leaving you all alone{/i}"
 
-    "Well, I'm not going to just stay here by myself."
+#    "Well, I'm not going to just stay here by myself."
 
-    "{i}You follow the rest of your team not knowing what to expect{/i}"
+#    "{i}You follow the rest of your team not knowing what to expect{/i}"
 
-    "{i}Once you reach the top of the stairwell, you see Jason with his eyes closed on the floor,
-    and Vivian who looks like she's about to pee her pants.{/i}"
+#    "{i}Once you reach the top of the stairwell, you see Jason with his eyes closed on the floor,
+#    and Vivian who looks like she's about to pee her pants.{/i}"
 
-    "{i}You move your eyes to the figure immediately in front of her, Peter The Anteater,
-    who looks as evil as ever{/i}"
+#    "{i}You move your eyes to the figure immediately in front of her, Peter The Anteater,
+#    who looks as evil as ever{/i}"
 
-    show peter_evil at right
+    show peter_right_evil at right
+    show jason_fear at left
 
-    p "I hope you discovered some useful information because it's QUIZ TIME!"
+    p "Not so fast! I hope you discovered some useful information because it's
+    QUIZ TIME!"
 
-    p "Pass the quiz with a seventy-five percent or higher and you're free to continue
+    p "Pass the quiz with a 75%% or higher and you're free to continue
     exploring campus."
 
     p "But if you don't pass...let's just say there will be some consequences."
 
+    "{i}You turn to look at Jason who is visibly shaking with fear{/i}"
+
     "{i}You let out a big gulp as you feel the pit of your stomach get heavy{/i}"
 
     p "Let's begin!"
+
+    hide jason_default
+    hide jason_fear
+
+    #start of quiz 1
+    menu:
+
+#        default result = False
+
+        #question 1
+        "When is the deadline to pay for your classes?"
+
+        "Depends on the term, but it is always before the first day of class":
+#            $ result = True
+            jump question2
+
+        "First day of class":
+            jump question2
+
+        "Before the end of the second week of class":
+            jump question2
+
+        "Before taking the finals":
+            jump question2
+
+label question2:
+
+    menu:
+
+        #question 2
+        "How do you apply for financial aid?"
+
+        "Trick question, we don’t. Financial aid is awarded automatically":
+            jump question3
+
+        "Apply from MyAid section at {a=https://www.ofas.uci.edu/index.php}https://www.ofas.uci.edu/{/a}":
+            jump question3
+
+        "Talk to staff at the financial aid office":
+            jump question3
+
+        "Talk to your tax prep specialist":
+            jump question3
+
+label question3:
+
+    menu:
+
+        #question 3
+        "What is the requirement to receive financial aid?"
+
+        "Be enrolled full-time":
+            jump question4
+
+        "You don’t need to be a full time student to receive financial aid":
+            jump question4
+
+        "Be a member of the students’ government":
+            jump question4
+
+        "Have a 3.5 GPA":
+            jump question4
+
+label question4:
+
+    menu:
+
+        #question 4
+        "If you decide to become a part time student, the limitation is:"
+
+        "50%% tuition for a maximum of 6 units of undergrad, 4 units of graduate classes":
+            jump question5
+
+        "50%% tuition for a maximum of 10 units of undergrad, 8 units of graduate classes":
+            jump question5
+
+        "75%% tuition for a maximum of 9 units of undergrad, 6 units of graduate classes":
+            jump question5
+
+        "75%% tuition for a maximum of 10 units of undergrad, 8 units of graduate classes":
+            jump question5
+
+label question5:
+
+    menu:
+
+        #question 5
+        "When is the deadline to apply for FAFSA?"
+
+        "March 2nd of the previous academic year":
+            jump result
+
+        "March 2nd of the current academic year":
+            jump result
+
+        "February 3 of the previous academic year":
+            jump result
+
+        "February 3 of the current academic year":
+            jump result
+
+label result:
+
+    p "The result of your quiz is..."
 
     # This ends the game.
 
