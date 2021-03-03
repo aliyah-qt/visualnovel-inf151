@@ -10,6 +10,7 @@ define p = Character("Peter The Anteater")
 image peter_left_default = im.Scale("images/anteater_left_default.png", 600, 600)
 image peter_left_evil = im.Scale("images/anteater_left_evil.png", 600, 600)
 image peter_right_evil = im.Scale("images/anteater_right_evil.png", 600, 600)
+image peter_right_happy = im.Scale("images/anteater_right_happy.png", 600, 600)
 
 define j = Character("Jason")
 image jason_fear = im.Scale("images/support_male_left_fear.png", 660, 660)
@@ -222,8 +223,7 @@ label start:
     j "Interesting. Even though we're supposed to pay less for part time enrollment,
     right?"
 
-    # need to figure out how to display 50%
-    MC "Yes. Looks like{b}you only pay half the price for a maximum of 10 units
+    MC "Yes. Looks like{b}you only pay 50%% for a maximum of 10 units
     of undergraduate courses and 8 units of graduate courses{/b}."
 
     j "That sounds reasonable."
@@ -319,16 +319,18 @@ label start:
     hide jason_default
     hide jason_fear
 
-    #start of quiz 1
-    menu:
+# start of quiz 1
+label question1:
 
-#        default result = False
+    $ result = 0
+
+    menu:
 
         #question 1
         "When is the deadline to pay for your classes?"
 
         "Depends on the term, but it is always before the first day of class":
-#            $ result = True
+            $ result += 1
             jump question2
 
         "First day of class":
@@ -351,6 +353,7 @@ label question2:
             jump question3
 
         "Apply from MyAid section at {a=https://www.ofas.uci.edu/index.php}https://www.ofas.uci.edu/{/a}":
+            $ result += 1
             jump question3
 
         "Talk to staff at the financial aid office":
@@ -370,6 +373,7 @@ label question3:
             jump question4
 
         "You don’t need to be a full time student to receive financial aid":
+            $ result += 1
             jump question4
 
         "Be a member of the students’ government":
@@ -389,6 +393,7 @@ label question4:
             jump question5
 
         "50%% tuition for a maximum of 10 units of undergrad, 8 units of graduate classes":
+            $ result += 1
             jump question5
 
         "75%% tuition for a maximum of 9 units of undergrad, 6 units of graduate classes":
@@ -405,6 +410,7 @@ label question5:
         "When is the deadline to apply for FAFSA?"
 
         "March 2nd of the previous academic year":
+            $ result += 1
             jump result
 
         "March 2nd of the current academic year":
@@ -419,6 +425,32 @@ label question5:
 label result:
 
     p "The result of your quiz is..."
+
+    p "%(result)s out of 5. Which means..."
+
+    if result >= 4:
+
+        show peter_right_happy at right
+
+        p "YOU PASSED!"
+
+    else:
+
+        p "You failed."
+
+        p "As per UCI policy, I will forget your current score if you receive a
+        passing score for this retake quiz."
+
+        p "Which starts now!"
+
+        jump question1
+
+    hide peter_right_happy
+    show peter_right_evil at right
+
+    p "You were successful this time, but will you be for the future quizzes?"
+
+    p "See you real soon!"
 
     # This ends the game.
 

@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 321: expected menuitem
-    default result = False
+File "game/script.rpy", line 326: expected menuitem
+    python:
     ^
 
 Ren'Py Version: Ren'Py 7.4.0.1167
-Tue Mar  2 21:11:04 2021
+Tue Mar  2 21:44:13 2021
