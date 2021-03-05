@@ -1,14 +1,14 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 382, in script
+  File "game/script.rpy", line 652, in script
     menu:
-ValueError: unsupported format character 't' (0x74) at index 4
+ValueError: unsupported format character 't' (0x74) at index 5
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 382, in script
+  File "game/script.rpy", line 652, in script
     menu:
   File "renpy/ast.py", line 1633, in execute
     choice = renpy.exports.menu(choices, self.set, args, kwargs, item_arguments)
@@ -16,5 +16,5 @@ Full traceback:
     label = substitute(label)
   File "renpy/exports.py", line 957, in substitute
     return s % tag_quoting_dict
-ValueError: unsupported format character 't' (0x74) at index 4
+ValueError: unsupported format character 't' (0x74) at index 5
 

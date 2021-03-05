@@ -6,21 +6,43 @@
 # MC stands for main character
 define MC = Character("[name]")
 
+
 define p = Character("Peter The Anteater")
 image peter_left_default = im.Scale("images/anteater_left_default.png", 600, 600)
 image peter_left_evil = im.Scale("images/anteater_left_evil.png", 600, 600)
+image peter_left_happy = im.Scale("images/anteater_left_happy.png", 600, 600)
+
+image peter_right_default = im.Scale("images/anteater_right_default.png", 600, 600)
 image peter_right_evil = im.Scale("images/anteater_right_evil.png", 600, 600)
 image peter_right_happy = im.Scale("images/anteater_right_happy.png", 600, 600)
 
+
 define j = Character("Jason")
-image jason_fear = im.Scale("images/support_male_left_fear.png", 660, 660)
-image jason_poker = im.Scale("images/support_male_left_poker.png", 660, 660)
-image jason_default = im.Scale("images/support_male_left_default.png", 660, 660)
+image jason_left_fear = im.Scale("images/support_male_left_fear.png", 660, 660)
+image jason_left_poker = im.Scale("images/support_male_left_poker.png", 660, 660)
+image jason_left_default = im.Scale("images/support_male_left_default.png", 660, 660)
+image jason_left_happy = im.Scale("images/support_male_left_happy.png", 660, 660)
+image jason_left_excited = im.Scale("images/support_male_left_excited.png", 660, 660)
+
+image jason_right_fear = im.Scale("images/support_male_right_fear.png", 660, 660)
+image jason_right_poker = im.Scale("images/support_male_right_poker.png", 660, 660)
+image jason_right_default = im.Scale("images/support_male_right_default.png", 660, 660)
+image jason_right_happy = im.Scale("images/support_male_right_happy.png", 660, 660)
+image jason_right_excited = im.Scale("images/support_male_right_excited.png", 660, 660)
+
 
 define viv = Character("Vivian")
-image vivian_fear = im.Scale("images/support_female_right_fear.png", 660, 660)
-image vivian_default = im.Scale("images/support_female_right_default.png", 660, 660)
-image vivian_poker = im.Scale("images/support_female_right_poker.png", 660, 660)
+image vivian_left_fear = im.Scale("images/support_female_left_fear.png", 660, 660)
+image vivian_left_default = im.Scale("images/support_female_left_default.png", 660, 660)
+image vivian_left_poker = im.Scale("images/support_female_left_poker.png", 660, 660)
+image vivian_left_excited = im.Scale("images/support_female_left_excited.png", 660, 660)
+image vivian_left_happy = im.Scale("images/support_female_left_happy.png", 660, 660)
+
+image vivian_right_fear = im.Scale("images/support_female_right_fear.png", 660, 660)
+image vivian_right_default = im.Scale("images/support_female_right_default.png", 660, 660)
+image vivian_right_poker = im.Scale("images/support_female_right_poker.png", 660, 660)
+image vivian_right_excited = im.Scale("images/support_female_right_excited.png", 660, 660)
+image vivian_right_happy = im.Scale("images/support_female_right_happy.png", 660, 660)
 
 image fao = im.Scale("images/aldrich_hall.jpg", 1300, 900)
 image bedroom = im.Scale("images/bedroom.jpg", 1300, 800)
@@ -108,11 +130,11 @@ label start:
     MC "Hey! Do any of you want to work together? I am sure the university's
     academic integrity policy does not cover this."
 
-    show jason_fear at left
+    show jason_left_fear at left
 
     j "I was about to say the same thing!"
 
-    show vivian_fear at right
+    show vivian_right_fear at right
 
     viv "Yes! Let's work together to figure this out."
 
@@ -121,8 +143,8 @@ label start:
     scene bren
     with fade
 
-    show jason_poker at left
-    show vivian_default at right
+    show jason_left_poker at left
+    show vivian_right_default at right
 
     viv "According to the Peter The Anteater, we're supposed to pass
     {b}4 tests{/b} at {b}4 different locations{/b}."
@@ -155,8 +177,8 @@ label start:
     scene fao
     with fade
 
-    show jason_default at left
-    show vivian_default at right
+    show jason_left_default at left
+    show vivian_right_default at right
 
     MC "Here we are."
 
@@ -170,21 +192,21 @@ label start:
     j "Yes, we can split up. [name] and I will take this floor while Vivian
     takes the other floor."
 
-    show vivian_fear at right
+    show vivian_right_fear at right
 
     viv "What if I run into one of those anteaters?"
 
     j "Then just run back to us."
 
-    show vivian_poker at right
+    show vivian_right_poker at right
 
     viv "Easy for you to say..."
 
     MC "Let's get to work."
 
-    hide vivian_default
-    hide vivian_fear
-    hide vivian_poker
+    hide vivian_right_default
+    hide vivian_right_fear
+    hide vivian_right_poker
     #show inside of financial aid building
     # show jason_default at right
 
@@ -300,7 +322,7 @@ label start:
 #    who looks as evil as ever{/i}"
 
     show peter_right_evil at right
-    show jason_fear at left
+    show jason_left_fear at left
 
     p "Not so fast! I hope you discovered some useful information because it's
     QUIZ TIME!"
@@ -316,13 +338,13 @@ label start:
 
     p "Let's begin!"
 
-    hide jason_default
-    hide jason_fear
+    hide jason_left_default
+    hide jason_left_fear
 
 # start of quiz 1
-label question1:
+label q1q1:
 
-    $ result = 0
+    $ q1result = 0
 
     menu:
 
@@ -330,19 +352,19 @@ label question1:
         "When is the deadline to pay for your classes?"
 
         "Depends on the term, but it is always before the first day of class":
-            $ result += 1
-            jump question2
+            $ q1result += 1
+            jump q1q2
 
         "First day of class":
-            jump question2
+            jump q1q2
 
         "Before the end of the second week of class":
-            jump question2
+            jump q1q2
 
         "Before taking the finals":
-            jump question2
+            jump q1q2
 
-label question2:
+label q1q2:
 
     menu:
 
@@ -350,19 +372,19 @@ label question2:
         "How do you apply for financial aid?"
 
         "Trick question, we don’t. Financial aid is awarded automatically":
-            jump question3
+            jump q1q3
 
         "Apply from MyAid section at {a=https://www.ofas.uci.edu/index.php}https://www.ofas.uci.edu/{/a}":
-            $ result += 1
-            jump question3
+            $ q1result += 1
+            jump q1q3
 
         "Talk to staff at the financial aid office":
-            jump question3
+            jump q1q3
 
         "Talk to your tax prep specialist":
-            jump question3
+            jump q1q3
 
-label question3:
+label q1q3:
 
     menu:
 
@@ -370,19 +392,19 @@ label question3:
         "What is the requirement to receive financial aid?"
 
         "Be enrolled full-time":
-            jump question4
+            jump q1q4
 
         "You don’t need to be a full time student to receive financial aid":
-            $ result += 1
-            jump question4
+            $ q1result += 1
+            jump q1q4
 
         "Be a member of the students’ government":
-            jump question4
+            jump q1q4
 
         "Have a 3.5 GPA":
-            jump question4
+            jump q1q4
 
-label question4:
+label q1q4:
 
     menu:
 
@@ -390,19 +412,19 @@ label question4:
         "If you decide to become a part time student, the limitation is:"
 
         "50%% tuition for a maximum of 6 units of undergrad, 4 units of graduate classes":
-            jump question5
+            jump q1q5
 
         "50%% tuition for a maximum of 10 units of undergrad, 8 units of graduate classes":
-            $ result += 1
-            jump question5
+            $ q1result += 1
+            jump q1q5
 
         "75%% tuition for a maximum of 9 units of undergrad, 6 units of graduate classes":
-            jump question5
+            jump q1q5
 
         "75%% tuition for a maximum of 10 units of undergrad, 8 units of graduate classes":
-            jump question5
+            jump q1q5
 
-label question5:
+label q1q5:
 
     menu:
 
@@ -410,25 +432,25 @@ label question5:
         "When is the deadline to apply for FAFSA?"
 
         "March 2nd of the previous academic year":
-            $ result += 1
-            jump result
+            jump q1result
 
         "March 2nd of the current academic year":
-            jump result
+            $ q1result += 1
+            jump q1result
 
         "February 3 of the previous academic year":
-            jump result
+            jump q1result
 
         "February 3 of the current academic year":
-            jump result
+            jump q1result
 
-label result:
+label q1result:
 
     p "The result of your quiz is..."
 
-    p "%(result)s out of 5. Which means..."
+    p "%(q1result)s out of 5. Which means..."
 
-    if result >= 4:
+    if q1result >= 4:
 
         show peter_right_happy at right
 
@@ -443,7 +465,7 @@ label result:
 
         p "Which starts now!"
 
-        jump question1
+        jump q1q1
 
     hide peter_right_happy
     show peter_right_evil at right
@@ -451,6 +473,252 @@ label result:
     p "You were successful this time, but will you be for the future quizzes?"
 
     p "See you real soon!"
+
+    hide peter_right_evil
+    show jason_left_default at left
+
+    j "I'm glad that's over!"
+
+    MC "We should check on Vivian."
+
+    "{i}You and Jason ascend up the stairwell{/i}"
+
+    "{i}At the top of the stairwell, you notice Vivian standing below a sign that reads:
+        The Registrar Office{/i}"
+
+    show vivian_right_default at right
+
+    j "Here we are. Apparently this is the office that deals with class registration."
+
+    viv "That sounds important."
+
+    MC "Yeah, we're here to take classes right? Or do we?"
+
+    j "Yeah, we sure are."
+
+    MC "Alright, let’s see what we have here."
+
+    viv "It seems that {b}the deadline to drop a class without a ‘W’ on your transcript
+    is the end of the 2nd week of instruction.{/b}"
+
+    j "Is a ‘W’ a bad thing? It stands for ‘Withdrawal’ right?"
+
+    MC "Yes. Withdrawal. It doesn't count towards your GPA. But if you have a ‘W’,
+    people might think that you cannot handle the class, and you don’t want to take
+    an ‘F’ or ‘D’ grade either."
+
+    viv "That’s right. Having many ‘W’ on your transcript will definitely make you look bad."
+
+    j "But your GPA only affects you if you plan on going for graduate school right?"
+
+    MC "It will also affect you if you plan on applying for scholarships."
+
+    viv "Oh, that’s right. But I guess employers only look at your overall GPA.
+    They only request a transcript if they hire you."
+
+    j "Don’t forget that if you drop too many classes, you will also delay your
+    own graduation. If anything, you should be trying to maximize your classes
+    because you pay a fixed price for it."
+
+    MC "Speaking of which, how many classes are we allowed to take per term?"
+
+    viv "Oh I know this! {b}You are allowed a maximum of 20 units per quarter. If
+    you want to add more units, you would have to talk to your academic advisor
+    about that.{/b}"
+
+    j "20 units sounds plenty! I heard that the workload at UCI is heavy too because
+    we are the best university in the area."
+
+    MC "I heard the same thing. I think I’ll start with 12 units for the first
+    quarter and see how that goes."
+
+    j "Sounds reasonable."
+
+    "{i}You each continue looking for information.{/i}"
+
+    j "Hey look what I found here! {b}If you take any AP classes or classes from
+    another college, you have to explicitly request prerequisites clearance for
+    every course that requires those.{/b}"
+
+    viv "I’ll try to remember that, I took some AP classes last year."
+
+    MC "Me too."
+
+    j "I found something else that's important. {b}Cheating is absolutely not tolerated.{/b}"
+
+    viv "Er...Is it tolerated anywhere?"
+
+    MC "Maybe they think it's tolerated everywhere except here..."
+
+    j "Yeah, maybe that’s what they think..."
+
+    viv "Anyway, let’s see what else we can find."
+
+    "{i}You each continue looking for information, more thoroughly this time.{/i}"
+
+    MC "I found something interesting. We can easily keep track of our progress
+    towards a degree by assessing DegreeWorks, which should be available by the
+    winter quarter of our first year."
+
+    viv "Nice! I’m glad they provide something like that."
+
+    j "Yeah, it’ll make it a lot easier for us!"
+
+    "{i}Suddenly, Peter The Anteater appears out of what one could call it, 'thin air'{/i}"
+
+    show peter_right_evil at right
+
+    hide vivian_right_default
+    show vivian_left_fear behind jason_left_default
+
+    viv "Eeeeeppp"
+
+    hide jason_left_default
+    show jason_left_poker at left
+
+    j "Yeah, yeah. Let's just get it over with."
+
+    p "IT'S QUIZ TIME!"
+
+    hide jason_left_poker
+    hide vivian_left_fear
+
+# start of quiz 2
+
+    label q2q1:
+
+        $ q2result = 0
+
+        menu:
+
+            #question 1
+            "When is the deadline to drop without a 'W' on your transcript?"
+
+            "By the end of the second week of instruction":
+                $ q2result += 1
+                jump q2q2
+
+            "placeholder":
+                jump q2q2
+
+            "placeholder":
+                jump q2q2
+
+            "placeholder":
+                jump q2q2
+
+    label q2q2:
+
+        menu:
+
+            #question 2
+            "How many units are you allowed to take in a quarter?"
+
+            "placeholder":
+                jump q2q3
+
+            "placeholder":
+                jump q2q3
+
+            "placeholder":
+                jump q2q3
+
+            "20. Any more classes need to be discussed with academic advisors.":
+                $ q2result += 1
+                jump q2q3
+
+    label q2q3:
+
+        menu:
+
+            #question 3
+            "If you took AP classes or classes from another college, you should?"
+
+            "Take the  class again at UCI":
+                jump q2q4
+
+            "Let the UCI advisors know about it":
+                jump q2q4
+
+            "Request prerequisite clearance for the first class that needs those prerequisites":
+                jump q2q4
+
+            "Request prerequisite clearance for every class that needs those as prerequisites":
+                $ q2result += 1
+                jump q2q4
+
+    label q2q4:
+
+        menu:
+
+            #question 4
+            "Cheating at UCI is:"
+
+            "Semi-tolerated":
+                jump q2q5
+
+            "Resolved on a case-by-case basis":
+                jump q2q5
+
+            "200%% tolerated":
+                jump q2q5
+
+            "Absolutely not tolerated":
+                $ q2result += 1
+                jump q2q5
+
+    label q2q5:
+
+        menu:
+
+            #question 5
+            "Where can you see your progress towards your major and minors and get all your academic status?"
+
+            "Viewing your unofficial transcript ":
+                jump q2result
+
+            "Study list on the website ":
+                jump q2result
+
+            "DegreeWorks ":
+                $ q2result += 1
+                jump q2result
+
+            "WebReg":
+                jump q2result
+
+    label q2result:
+
+        p "The result of your quiz is..."
+
+        p "%(q2result)s out of 5. Which means..."
+
+        if q2result >= 4:
+
+            show peter_right_happy at right
+
+            p "YOU PASSED!"
+
+        else:
+
+            p "You failed."
+
+            p "As per UCI policy, I will forget your current score if you receive a
+            passing score for this retake quiz."
+
+            p "Which starts now!"
+
+            jump q2q1
+
+        hide peter_right_happy
+        show peter_right_evil at right
+
+        p "You were successful this time, but will you be for the future quizzes?"
+
+        p "See you real soon!"
+
+        hide peter_right_evil
+
 
     # This ends the game.
 
