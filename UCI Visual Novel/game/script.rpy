@@ -583,7 +583,7 @@ label q1result:
     hide jason_left_poker
     hide vivian_left_fear
 
-# start of quiz 2
+    # start of quiz 2
 
     label q2q1:
 
@@ -719,6 +719,241 @@ label q1result:
 
         hide peter_right_evil
 
+    show vivian_right_excited at right
+    show jason_left_default at left
+
+    viv "I'm so glad that's over!"
+
+    j "Let's get out of here."
+
+    hide vivian_right_excited
+    hide jason_left_default
+
+    "{i}You all walk out of the Aldrich Hall building together{/i}"
+
+    "{i}As you all walk down Ring Road, two parallel monoliths appear between the trees{/i}"
+
+    show vivian_right_default at right
+    show jason_left_default at left
+
+    "{i}Jason points towards the buildings{/i}"
+
+    j "Hey, what are those for?"
+
+    viv "Let's go check it out!"
+
+    MC "We don’t have that much time though. Let’s split up and find out what we can,
+     then we can all meet up again to share our info."
+
+    j "Sounds like a good idea! I’ll go with Vivian to the building on the right...The Gateway Study Center."
+
+    j "[name], can you go check out Langson Library?"
+
+    MC "Sure, sounds good! Let’s meet back here in 10 minutes!"
+
+    hide vivian_right_default
+    hide jason_left_default
+
+    "{i}You walk into Langson Library through the motion sensor activated doors and
+    quickly spy a wooden table to my right.{/i}"
+
+    "{i}On top of it lies 2 stacks of flyers stating: 'Available Resources'. The
+    one on the left is titled 'Langson' on the top and the other is titled 'Science Library'.{/i}"
+
+    "{i}You start reading the Langson flyer{/i}"
+
+    "{b}{i}For more information:{/b}{/i} {a=https://www.lib.uci.edu/langson}https://www.lib.uci.edu/langson{/a}"
+
+    "{i}You continue to read what's listed immediately underneath it{/i}"
+
+    "{b}{i}Take this virtual tour!{/b}{/i} {a=https://www.lib.uci.edu/langson/langson-floor-1}https://www.lib.uci.edu/langson/langson-floor-1{/a}"
+
+    MC "How interesting!"
+
+    "{i}You start to wonder what is in the Science Library.{/i}"
+
+    "{i}You keep reading to find another section.{/i}"
+
+    "{b}{i}Take this Science Library tour!{/b}{/i}  {a=https://www.lib.uci.edu/science-library/science-floor-1}https://www.lib.uci.edu/science-library/science-floor-1{/a}"
+
+    "{i}Having learned everything about the UCI libraries, you begin to leave...{/i}"
+
+    "{i}But suddenly...{/i}"
+
+    "{i}Peter The Anteater appears!{/i}"
+
+    show peter_left_default at left
+
+    p "It seems that I got you alone this time."
+
+    p "Regardless..."
+
+    show peter_left_evil at left
+
+    p "YOU SHALL NOT PASS until you take the Gateway Study Center tour."
+
+    "{i}Unable to leave, you begin to take the tour...{/i} {a=https://www.lib.uci.edu/gateway-study-center/floor-2}https://www.lib.uci.edu/gateway-study-center/floor-2{/a}"
+
+    p "Not so fast! Because it's QUIZ TIME!"
+
+    # start of Quiz 3
+    label q3q1:
+
+        $ q3result = 0
+
+        menu:
+
+            #question 1
+            "How much does printing cost?"
+
+            "placeholder":
+                jump q3q2
+
+            "placeholder":
+                jump q3q2
+
+            "$0.12 per page":
+                $ q3result += 1
+                jump q3q2
+
+            "placeholder":
+                jump q3q2
+
+
+    label q3q2:
+
+        menu:
+
+            #question 2
+            "Which floor are new books/magazines first released in Langson Library?"
+
+            "2nd floor":
+                $ q3result += 1
+                jump q3q3
+
+            "4th floor":
+                jump q3q3
+
+            "3rd floor":
+                jump q3q3
+
+            "1st floor":
+                jump q3q3
+
+
+        label q3q3:
+
+            menu:
+
+                #question 3
+                "Which building is the Writing Center located in?"
+
+                "Science Library":
+                    $ q3result += 1
+                    jump q3q4
+
+                "Langson Library":
+                    jump q3q4
+
+                "The Gateway Study Center":
+                    jump q3q4
+
+                "Bren Events Center":
+                    jump q3q4
+
+
+        label q3q4:
+
+            menu:
+
+                #question 4
+                "Which building are the multimedia resources located in?"
+
+                "Langson Library":
+                    jump q3q5
+
+                "The Gateway Study Center":
+                    jump q3q5
+
+                "Bren Events Center":
+                    jump q3q5
+
+                "Science Library":
+                    $ q3result += 1
+                    jump q3q5
+
+
+        label q3q5:
+
+            menu:
+
+                #question 5
+                "Is the Gateway Study Center a “quiet study area”?"
+
+                "No":
+                    jump q3q6
+
+                "Only on the weekends":
+                    jump q3q6
+
+                "Only after 5PM":
+                    jump q3q6
+
+                "Yes":
+                    $ q3result += 1
+                    jump q3q6
+
+        label q3q6:
+
+            menu:
+
+                #question 6
+                "How do we get our own space in the library?"
+
+                "placeholder":
+                    jump q3result
+
+                "Book them through {a=https://www.lib.uci.edu/study-space-locator}https://www.lib.uci.edu/study-space-locator{/a}":
+                    $ q3result += 1
+                    jump q3result
+
+                "placeholder":
+                    jump q3result
+
+                "placeholder":
+                    jump q3result
+
+        label q3result:
+
+            p "The result of your quiz is..."
+
+            p "%(q3result)s out of 6. Which means..."
+
+            if q3result >= 5:
+
+                show peter_left_happy at left
+
+                p "YOU PASSED!"
+
+            else:
+
+                p "You failed."
+
+                p "As per UCI policy, I will forget your current score if you receive a
+                passing score for this retake quiz."
+
+                p "Which starts now!"
+
+                jump q3q1
+
+            hide peter_left_happy
+            show peter_left_evil at left
+
+            p "You were successful this time, but will you be for the future quizzes?"
+
+            p "See you real soon!"
+
+            hide peter_right_evil
 
     # This ends the game.
 
