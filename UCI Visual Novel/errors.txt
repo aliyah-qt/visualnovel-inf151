@@ -2,9 +2,61 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 326: expected menuitem
-    python:
-    ^
+File "game/script.rpy", line 1012: expected statement.
+    MC: Check this out. The ARC offers all these sports indoor and outdoor. On top of that there is a club for almost every sport here.
+      ^
 
-Ren'Py Version: Ren'Py 7.4.0.1167
-Tue Mar  2 21:44:13 2021
+File "game/script.rpy", line 1013: expected statement.
+    V: Also they offer so many different classes to learn. Such as martial arts, rock climbing, rowing, dance etc. and even cooking classes that’s amazing!
+     ^
+
+File "game/script.rpy", line 1014: expected statement.
+    (https://www.campusrec.uci.edu/classes/index.asp)
+                                                     ^
+
+File "game/script.rpy", line 1016: expected statement.
+    MC: Rowing sounds like something I would definitely like to learn. Plus they have a club for that which goes to Newport beach for practice. That’s great.
+      ^
+
+File "game/script.rpy", line 1017: expected statement.
+    J: I found a hiking club too, the group goes on hikes every other weekend. That’s going to be refreshing with all the academic stress UCI will give me xD
+     ^
+
+File "game/script.rpy", line 1018: expected statement.
+    V: If I have a baseball club and want to invite other teams from other universities, I can fill an application and book the field. That’s pretty convenient! This is the form...look.
+     ^
+
+File "game/script.rpy", line 1019: expected statement.
+    MC: but how soon do I have to send a reservation/rental inquiry
+      ^
+
+File "game/script.rpy", line 1020: expected statement.
+    V: Reservations can be made up to a quarter in advance for most activities. All requests must be submitted at least two weeks from the date of the desired event in order to receive consideration.
+     ^
+
+File "game/script.rpy", line 1021: expected statement.
+    (https://www.campusrec.uci.edu/arc/includes/Facility-Reservation-Application.pdf)
+                                                                                     ^
+
+File "game/script.rpy", line 1022: expected statement.
+    MC: let’s check out the outdoor fields.
+      ^
+
+File "game/script.rpy", line 1023: expected statement.
+    ( a few pictures of the outdoor basketball, soccer and tennis courts)
+                                                                         ^
+
+File "game/script.rpy", line 1024: expected statement.
+    J: That was a lot of exploration, let’s check the other spots or I will spend my whole day here lol.
+     ^
+
+File "game/script.rpy", line 1025: expected statement.
+    EaterBot: What’s the rush Jason. First let the EaterBots test your memory.
+            ^
+
+File "game/script.rpy", line 1026: expected statement.
+    V: I guess we completely forgot about the quiz xD
+     ^
+
+Ren'Py Version: Ren'Py 7.4.2.1292
+Mon Mar  8 12:21:10 2021

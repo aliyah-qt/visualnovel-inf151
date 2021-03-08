@@ -598,13 +598,13 @@ label q1result:
                 $ q2result += 1
                 jump q2q2
 
-            "placeholder":
+            "After the first day of instruction":
                 jump q2q2
 
-            "placeholder":
+            "Before the first day of instruction":
                 jump q2q2
 
-            "placeholder":
+            "Before the fifth week of instruction":
                 jump q2q2
 
     label q2q2:
@@ -614,13 +614,13 @@ label q1result:
             #question 2
             "How many units are you allowed to take in a quarter?"
 
-            "placeholder":
+            "16. Any more classes need to be discussed with academic advisors.":
                 jump q2q3
 
-            "placeholder":
+            "24. Any more classes need to be discussed with academic advisors.":
                 jump q2q3
 
-            "placeholder":
+            "18. Any more classes need to be discussed with academic advisors.":
                 jump q2q3
 
             "20. Any more classes need to be discussed with academic advisors.":
@@ -806,17 +806,17 @@ label q1result:
             #question 1
             "How much does printing cost?"
 
-            "placeholder":
+            "$0.10 per page":
                 jump q3q2
 
-            "placeholder":
+            "$0.15 per page":
                 jump q3q2
 
             "$0.12 per page":
                 $ q3result += 1
                 jump q3q2
 
-            "placeholder":
+            "Free for UCI students":
                 jump q3q2
 
 
@@ -910,17 +910,17 @@ label q1result:
                 #question 6
                 "How do we get our own space in the library?"
 
-                "placeholder":
+                "First come first serve policy":
                     jump q3result
 
                 "Book them through {a=https://www.lib.uci.edu/study-space-locator}https://www.lib.uci.edu/study-space-locator{/a}":
                     $ q3result += 1
                     jump q3result
 
-                "placeholder":
+                "2 hour max usage policy":
                     jump q3result
 
-                "placeholder":
+                "Ask the librarian":
                     jump q3result
 
         label q3result:
@@ -953,7 +953,221 @@ label q1result:
 
             p "See you real soon!"
 
+            hide peter_left_evil
+
+    hide peter_left_default
+    "{i} Walks out of the library and sees Vivian and Jason leaving the opposite building. Vivian spots [name] and waves. {/i}"
+
+    show vivian_left_excited at left
+    viv "Hey [name]! Did you get stopped and quizzed too?"
+    MC "Yeah, I had to learn everything about all the study resources."
+    show jason_right_happy at right
+    j "Oh darn. Bummer that we couldn’t spread the work, but hey, at least we all know about the school’s study resources now!"
+    hide jason_right_happy
+    hide vivian_left_excited
+    "{i} The group leaves the twin study centers together and walk back towards ring road. {/i}"
+    MC "I am getting a bit tired of all this though..."
+    show jason_right_fear at right
+    j "Yeah...all this walking is making me really tired..."
+    show vivian_left_poker at left
+    viv "Haha, I think [name] meant the quizzing Jason."
+    hide jason_right_fear
+    show jason_right_poker at right
+    j "..."
+    MC "..."
+    viv "..."
+    "{i} They walk towards a pair of flagpoles and see several busses with UCI logos waiting there.{/i}"
+    MC "Anyways... Let's go check out those busses and see where they'll take us!"
+    hide vivian_left_poker
+    show vivian_left_happy at left
+    viv "Good idea! Let's go!"
+    hide vivian_left_happy
+    hide jason_right_poker
+    "{i} The trio board the Peter driven bus which rolls down Campus and turns down California before arriving at a building. {/i}"
+    show peter_left_default
+    p "Welcome to the Anteater Recreational Center (ARC). Here you'll find all sorts of fun, physical activites! Please watch your feet as you exit the bus."
+    hide peter_left_default
+    "{i} We leave the bus and enter the ARC. {/i}"
+
+
+    #Start building #4
+    show jason_left_excited at left
+    j "Come on let’s check it out!"
+    #(a different visual from inside the ARC)
+    "{i} We enter the building. {/i}"
+    MC "Woah! Look at that gym and the indoor courts! They're massive!"
+    show vivian_right_excited at right
+    viv "Hey check this out!"
+    #(a picture of the entry hand scanner system)
+    viv "What a neat entry system! It says here that all freshmen have to sign up here before entering the ARC. You’re supposed to punch in your UCI student ID and then scan your hand for entry. This is pretty cool!"
+    MC "It also says that we can get our friends in too by getting an ARC day pass."
+    j "Really?! I’ll be bringing my friends over to play ball with me all the time!"
+    MC "Yeah! Let’s go check out what other activities and sports we can play in here."
+
+    #( a few pictures of the gym, lockers, swimming pool, basketball courts, squash courts etc.)
+    #(some banter to make it look like a conversation)
+    viv "Look! There's a swimming pool out back! Let's all go for a dip someday!"
+    j "I'm not much of a swimmer but I'm down! Did you see the racquetball courts though? Those glass walls look so amazing. You can even turn them into volleyball courts!"
+    MC "They have so many activities we could spend all day here. Let's take a look at the ARC’s {a=https://www.campusrec.uci.edu/arc/facilities.asp}facilities map{/a}."
+    j "Hmmm... Let me see... The ARC offers all these sports, both indoor and outdoor. On top of that, there is a club for nearly every sport!."
+    viv "Oh! They also offer a variety of different classes to learn. They have martial arts, rock climbing, rowing, dance, and even cooking classes! That’s amazing!"
+    j "Where'd you see those Vivian?"
+    viv "Here in this {a=https://www.campusrec.uci.edu/classes/index.asp}pamphlet{/a}!"
+    MC "Hmmm... Rowing sounds like something I would definitely like to learn. Their club even goes to Newport beach for practice."
+    j "I found a hiking club too; the group goes on hikes every other weekend. That’s more up my alley."
+    viv "If I have a baseball club and want to invite other teams from other universities, I can fill an application and book the field. That’s pretty convenient! This is the {a=https://www.campusrec.uci.edu/arc/includes/Facility-Reservation-Application.pdf}form{/a}."
+    MC "How soon do I have to make a reservation/rental inquiry?"
+    viv "Reservations can be made up to a quarter in advance for most activities. All requests must be submitted at least two weeks from the date of the desired event in order to receive consideration."
+    j "This is all pretty interesting but a lot. Let's get some fresh air and check out the outdoor fields."
+    #( a few pictures of the outdoor basketball, soccer and tennis courts)
+    viv "That was a lot of exploration. The ARC really offers a lot of activities! I'd love to just spend my entire day here but we have to get going."
+    hide vivian_right_excited
+    hide jason_left_excited
+    show peter_right_evil
+    p "Leaving so soon? What’s the rush Vivian?"
+    j "I guess we completely forgot about the quiz."
+    p "That's RIGHT! Now answer these questions..."
+
+    # start of Quiz 4
+    label q4q1:
+
+        $ q4result = 0
+
+        menu:
+
+            #question 1
+            "How do you enter the ARC?"
+
+            "Just go in swipe your ID card":
+                jump q4q2
+
+            "Punch in your number and get your hand scanned":
+                $ q4result += 1
+                jump q4q2
+
+            "Just say “hi” at the front desk and you can enter":
+                jump q4q2
+
+            "Just type in your student ID at the entry gate":
+                jump q4q2
+
+
+    label q4q2:
+
+        menu:
+
+            #question 2
+            "Can you bring a non-UCI person to the ARC and how?"
+
+            "Yes. By getting a day pass for them":
+                $ q4result += 1
+                jump q4q3
+
+            "Yes. By signing them up and getting their hand scanned":
+                jump q4q3
+
+            "No. UCI is very strict about it’s only UCI student policy":
+                jump q4q3
+
+            "No. But you can surely sneak them in":
+                jump q4q3
+
+
+    label q4q3:
+
+        menu:
+
+            #question 3
+            "Which class does the ARC not offer?"
+
+            "Martial Arts":
+                jump q4q4
+
+            "Cooking":
+                jump q4q4
+
+            "Tennis":
+                jump q4q4
+
+            "Skydiving":
+                $ q4result += 1
+                jump q4q4
+
+
+    label q4q4:
+
+        menu:
+
+            #question 4
+            "What is the facility application reservation form for?"
+
+            "To reserve a spot in a club in the ARC":
+                jump q4q5
+
+            "To make a reservation for a new sports club in UCI":
+                jump q4q5
+
+            "To reserve a court/field/room etc. for events for your club":
+                $ q4result += 1
+                jump q4q5
+
+            "To reserve rooms to hold private parties":
+                jump q4q5
+
+
+    label q4q5:
+
+        menu:
+
+            #question 5
+            "How soon does one have to submit the facility application reservation?"
+
+            "A quarter before the event is scheduled":
+                jump q4result
+
+            "48hrs before the event is scheduled":
+                jump q4result
+
+            "2 weeks before the event is scheduled":
+                $ q4result += 1
+                jump q4result
+
+            "At least a month before the event is scheduled":
+                jump q4result
+
+    label q4result:
+
+        p "The result of your quiz is..."
+
+        p "%(q4result)s out of 5. Which means..."
+
+        if q4result >= 4:
             hide peter_right_evil
+            show peter_right_happy
+
+            p "YOU PASSED!"
+
+        else:
+
+            p "You failed."
+
+            p "As per UCI policy, I will forget your current score if you receive a
+            passing score for this retake quiz."
+
+            p "Which starts now!"
+
+            jump q4q1
+
+        hide peter_right_happy
+        show peter_left_evil
+
+        p "You were successful this time, but will you be for the future quizzes?"
+
+        p "See you real soon!"
+
+        hide peter_left_evil
+
+
 
     # This ends the game.
 
