@@ -56,6 +56,7 @@ image bus = im.Scale("images/bus.jpg", 1300, 900)
 image ARC_outside = im.Scale("images/ARC_outside.jpg", 1300, 900)
 image ARC_inside1 = im.Scale("images/ARC_inside1.png", 1300, 900)
 image ARC_inside2 = im.Scale("images/ARC_inside2.png", 1300, 900)
+image black_screen = im.Scale("images/black_screen.png", 1300, 900)
 
 # The game starts here.
 
@@ -214,8 +215,9 @@ label start:
     hide vivian_right_default
     hide vivian_right_fear
     hide vivian_right_poker
-    #show inside of financial aid building
-    # show jason_default at right
+
+    scene black_screen
+    with fade
 
     MC "Check this out. Apparently you're supposed to pay your tuition here. I guess
     you'll come back to this building after all, Mr. Self Sufficient."
@@ -327,6 +329,9 @@ label start:
 
 #    "{i}You move your eyes to the figure immediately in front of her, Peter The Anteater,
 #    who looks as evil as ever{/i}"
+
+    scene fao
+    with fade
 
     show peter_right_evil at right
     show jason_left_fear at left
@@ -482,6 +487,10 @@ label q1result:
     p "See you real soon!"
 
     hide peter_right_evil
+
+    scene black_screen
+    with fade
+
     show jason_left_default at left
 
     j "I'm glad that's over!"
