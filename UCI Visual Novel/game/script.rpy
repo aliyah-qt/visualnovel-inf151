@@ -44,7 +44,8 @@ image vivian_right_poker = im.Scale("images/support_female_right_poker.png", 660
 image vivian_right_excited = im.Scale("images/support_female_right_excited.png", 660, 660)
 image vivian_right_happy = im.Scale("images/support_female_right_happy.png", 660, 660)
 
-image fao = im.Scale("images/aldrich_hall.jpg", 1300, 900)
+image aldrich = im.Scale("images/aldrich_hall.jpg", 1300, 900)
+image fao = im.Scale("images/fao.PNG", 1300, 900)
 image bedroom = im.Scale("images/bedroom.jpg", 1300, 800)
 image gym = im.Scale("images/athletics_center_inside.jpg", 1300, 800)
 image bren = im.Scale("images/bren_events_center_temp.jpg", 1300, 800)
@@ -57,6 +58,7 @@ image ARC_outside = im.Scale("images/ARC_outside.jpg", 1300, 900)
 image ARC_inside1 = im.Scale("images/ARC_inside1.png", 1300, 900)
 image ARC_inside2 = im.Scale("images/ARC_inside2.png", 1300, 900)
 image black_screen = im.Scale("images/black_screen.png", 1300, 900)
+image registrar = im.Scale("images/registrar.jpg", 1300, 900)
 
 # The game starts here.
 
@@ -181,8 +183,7 @@ label start:
 
     j "I hope we'll find more information there..."
 
-   # fao stand for financial aid office
-    scene fao
+    scene aldrich
     with fade
 
     show jason_left_default at left
@@ -197,8 +198,8 @@ label start:
     MC "Let's look around for information. We may find what we need on those
     catalogues and flyers."
 
-    j "Yes, we can split up. [name] and I will take this floor while Vivian
-    takes the other floor."
+    j "Yes, we can split up. [name] and I will take the lower floor while Vivian
+    takes the top floor."
 
     show vivian_right_fear at right
 
@@ -216,8 +217,10 @@ label start:
     hide vivian_right_fear
     hide vivian_right_poker
 
-    scene black_screen
+    scene fao
     with fade
+
+    show jason_left_default at left
 
     MC "Check this out. Apparently you're supposed to pay your tuition here. I guess
     you'll come back to this building after all, Mr. Self Sufficient."
@@ -329,9 +332,6 @@ label start:
 
 #    "{i}You move your eyes to the figure immediately in front of her, Peter The Anteater,
 #    who looks as evil as ever{/i}"
-
-    scene fao
-    with fade
 
     show peter_right_evil at right
     show jason_left_fear at left
@@ -488,9 +488,6 @@ label q1result:
 
     hide peter_right_evil
 
-    scene black_screen
-    with fade
-
     show jason_left_default at left
 
     j "I'm glad that's over!"
@@ -499,10 +496,15 @@ label q1result:
 
     "{i}You and Jason ascend up the stairwell{/i}"
 
-    "{i}At the top of the stairwell, you notice Vivian standing below a sign that reads:
-        The Registrar Office{/i}"
+    scene registrar
+    with fade
 
     show vivian_right_default at right
+
+    "{i}At the top of the stairwell, you notice Vivian standing near a window called
+    The Registrar Office{/i}"
+
+    show jason_left_default at left
 
     j "Here we are. Apparently this is the office that deals with class registration."
 
@@ -560,11 +562,16 @@ label q1result:
 
     j "I found something else that's important. {b}Cheating is absolutely not tolerated.{/b}"
 
+    show vivian_right_poker at right
+
     viv "Er...Is it tolerated anywhere?"
 
     MC "Maybe they think it's tolerated everywhere except here..."
 
     j "Yeah, maybe that’s what they think..."
+
+    hide vivian_right_poker
+    show vivian_right_default at right
 
     viv "Anyway, let’s see what else we can find."
 
@@ -583,19 +590,19 @@ label q1result:
     show peter_right_evil at right
 
     hide vivian_right_default
-    show vivian_left_fear behind jason_left_default
+    show jason_left_poker at left
+    show vivian_left_fear behind jason_left_poker
 
     viv "Eeeeeppp"
-
-    hide jason_left_default
-    show jason_left_poker at left
 
     j "Yeah, yeah. Let's just get it over with."
 
     p "IT'S QUIZ TIME!"
 
     hide jason_left_poker
+    hide jason_left_default
     hide vivian_left_fear
+    hide vivian_right_poker
 
     # start of quiz 2
 
@@ -748,10 +755,10 @@ label q1result:
     scene ring_road
     with fade
 
-    "{i}As you all walk down Ring Road, two parallel monoliths appear between the trees{/i}"
-
     show vivian_right_default at right
     show jason_left_default at left
+
+    "{i}As you all walk down Ring Road, two parallel monoliths appear between the trees{/i}"
 
     "{i}Jason points towards the buildings{/i}"
 
@@ -761,6 +768,9 @@ label q1result:
 
     scene gateway
     with fade
+
+    show vivian_right_default at right
+    show jason_left_default at left
 
     MC "We don’t have that much time though. Let’s split up and find out what we can,
      then we can all meet up again to share our info."
@@ -805,13 +815,13 @@ label q1result:
 
     "{i}Peter The Anteater appears!{/i}"
 
-    show peter_left_default at left
+    show peter_left_default
 
     p "It seems that I got you alone this time."
 
     p "Regardless..."
 
-    show peter_left_evil at left
+    show peter_left_evil
 
     p "YOU SHALL NOT PASS until you take the Gateway Study Center tour."
 
@@ -954,7 +964,7 @@ label q1result:
 
             if q3result >= 5:
 
-                show peter_left_happy at left
+                show peter_left_happy
 
                 p "YOU PASSED!"
 
@@ -970,7 +980,7 @@ label q1result:
                 jump q3q1
 
             hide peter_left_happy
-            show peter_left_evil at left
+            show peter_left_evil
 
             p "You were successful this time, but will you be for the future quizzes?"
 
@@ -979,24 +989,32 @@ label q1result:
             hide peter_left_evil
 
     hide peter_left_default
-    "{i} You walk out of the library and see Vivian and Jason leaving the opposite building. Vivian spots you and waves. {/i}"
+    "{i} You walk out of the library{/i}"
 
     scene gateway
     with fade
 
-    show vivian_left_happy at left
+    show vivian_left_poker at left
+    show jason_right_poker at right
+
+    "{i}As soon as you walk out, you see Vivian and Jason leaving the opposite building.
+    Vivian spots you first.{/i}"
+
     viv "Hey [name]! Did you get stopped and quizzed too?"
     MC "Yeah, I had to learn everything about all the study resources."
-    show jason_right_happy at right
     j "Oh darn. Bummer that we couldn’t spread the work, but hey, at least we all know about the school’s study resources now!"
-    hide jason_right_happy
-    hide vivian_left_excited
+    hide jason_right_poker
+    hide vivian_left_poker
     "{i} The group leaves the twin study centers together and walk back towards ring road. {/i}"
+
+    scene ring_road
+    with fade
+
     MC "I am getting a bit tired of all this though..."
     show jason_right_fear at right
     j "Yeah...all this walking is making me really tired..."
     show vivian_left_poker at left
-    viv "Haha, I think [name] meant the quizzing Jason."
+    viv "I think [name] meant the quizzing Jason."
     hide jason_right_fear
     show jason_right_poker at right
     j "..."
@@ -1035,6 +1053,7 @@ label q1result:
 
     MC "Woah! Look at that gym and the indoor courts! They're massive!"
     show vivian_right_excited at right
+    show jason_left_excited at left
     viv "Hey check this out!"
 
     "{i}Vivian gestures to the entry hand scanner system{/i}"
@@ -1046,6 +1065,9 @@ label q1result:
 
     scene ARC_inside2
     with fade
+
+    show vivian_right_excited at right
+    show jason_left_excited at left
 
     viv "Look! There's a swimming pool out back! Let's all go for a dip someday!"
     j "I'm not much of a swimmer but I'm down! Did you see the racquetball courts though? Those glass walls look so amazing. You can even turn them into volleyball courts!"
@@ -1064,10 +1086,13 @@ label q1result:
     viv "That was a lot of exploration. The ARC really offers a lot of activities! I'd love to just spend my entire day here but we have to get going."
     hide vivian_right_excited
     hide jason_left_excited
-    show peter_right_evil
+    show vivian_right_fear at right
+    show peter_left_evil at left
     p "Leaving so soon? What’s the rush Vivian?"
-    j "I guess we completely forgot about the quiz."
+    viv "I guess we completely forgot about the quiz."
     p "That's RIGHT! Now answer these questions..."
+
+    hide vivian_right_fear
 
     # start of Quiz 4
     label q4q1:
@@ -1184,7 +1209,7 @@ label q1result:
 
         if q4result >= 4:
             hide peter_right_evil
-            show peter_right_happy
+            show peter_left_happy at left
 
             p "YOU PASSED!"
 
@@ -1208,13 +1233,16 @@ label q1result:
         p "I am going back to welcome the next wave of students. This is part of
         the new, never before seen orientation package for the 2021-2022 academic year."
 
+        show vivian_right_poker at right
+
         viv "Wait...you mean we tried so hard to pass those quizzes but that was all part of the plan?"
 
         p "Bye now!"
 
-        "{i}Zot... Zot.. Zot.{/i}"
+        hide peter_left_happy
+        hide _peter_left_evil
 
-        hide peter_right_happy
+        "{i}Zot... Zot.. Zot.{/i}"
 
         show jason_left_excited at left
         show vivian_right_excited at right
