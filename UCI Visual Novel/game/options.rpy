@@ -33,7 +33,7 @@ define gui.about = _p("""Created by INF 151 Group 1: Rachit Ahuja (narrative des
  Emerson Chow (background artist/programmer), Aliyah Clayton (programmer),
  Nham Dinh (narrative designer), and Kristine Nguyen (character artist).
 
- Main menu music by www.bensound.com.""")
+ Main menu music by www.bensound.com. All background images are courtesy of UCI, Google Images, and unsplash.com.""")
 
 
 ## A short name for the game used for executables and directories in the built

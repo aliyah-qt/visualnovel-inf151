@@ -49,6 +49,13 @@ image bedroom = im.Scale("images/bedroom.jpg", 1300, 800)
 image gym = im.Scale("images/athletics_center_inside.jpg", 1300, 800)
 image bren = im.Scale("images/bren_events_center_temp.jpg", 1300, 800)
 image map = im.Scale("images/UCI_campus_map.jpg", 1300, 800)
+image ring_road = im.Scale("images/ring_road.jpg", 1300, 900)
+image gateway = im.Scale("images/gateway_study_center.jpg", 1300, 900)
+image langson = im.Scale("images/langson.jpg", 1300, 900)
+image bus = im.Scale("images/bus.jpg", 1300, 900)
+image ARC_outside = im.Scale("images/ARC_outside.jpg", 1300, 900)
+image ARC_inside1 = im.Scale("images/ARC_inside1.png", 1300, 900)
+image ARC_inside2 = im.Scale("images/ARC_inside2.png", 1300, 900)
 
 # The game starts here.
 
@@ -507,11 +514,9 @@ label q1result:
     people might think that you cannot handle the class, and you don’t want to take
     an ‘F’ or ‘D’ grade either."
 
-    viv "That’s right. Having many ‘W’ on your transcript will definitely make you look bad."
+    viv "That’s right. Having many ‘W’s on your transcript will definitely make you look bad."
 
     j "But your GPA only affects you if you plan on going for graduate school right?"
-
-    MC "It will also affect you if you plan on applying for scholarships."
 
     viv "Oh, that’s right. But I guess employers only look at your overall GPA.
     They only request a transcript if they hire you."
@@ -731,6 +736,9 @@ label q1result:
 
     "{i}You all walk out of the Aldrich Hall building together{/i}"
 
+    scene ring_road
+    with fade
+
     "{i}As you all walk down Ring Road, two parallel monoliths appear between the trees{/i}"
 
     show vivian_right_default at right
@@ -741,6 +749,9 @@ label q1result:
     j "Hey, what are those for?"
 
     viv "Let's go check it out!"
+
+    scene gateway
+    with fade
 
     MC "We don’t have that much time though. Let’s split up and find out what we can,
      then we can all meet up again to share our info."
@@ -753,6 +764,9 @@ label q1result:
 
     hide vivian_right_default
     hide jason_left_default
+
+    scene langson
+    with fade
 
     "{i}You walk into Langson Library through the motion sensor activated doors and
     quickly spy a wooden table to my right.{/i}"
@@ -956,7 +970,10 @@ label q1result:
             hide peter_left_evil
 
     hide peter_left_default
-    "{i} Walks out of the library and sees Vivian and Jason leaving the opposite building. Vivian spots [name] and waves. {/i}"
+    "{i} You walk out of the library and see Vivian and Jason leaving the opposite building. Vivian spots you and waves. {/i}"
+
+    scene gateway
+    with fade
 
     show vivian_left_happy at left
     viv "Hey [name]! Did you get stopped and quizzed too?"
@@ -976,6 +993,10 @@ label q1result:
     j "..."
     MC "..."
     viv "..."
+
+    scene bus
+    with fade
+
     "{i} They walk towards a pair of flagpoles and see several busses with UCI logos waiting there.{/i}"
     MC "Anyways... Let's go check out those busses and see where they'll take us!"
     hide vivian_left_poker
@@ -983,29 +1004,40 @@ label q1result:
     viv "Good idea! Let's go!"
     hide vivian_left_happy
     hide jason_right_poker
+
     "{i} The trio board the Peter driven bus which rolls down Campus and turns down California before arriving at a building. {/i}"
+
+    scene ARC_outside
+    with fade
+
     show peter_left_default
     p "Welcome to the Anteater Recreational Center (ARC). Here you'll find all sorts of fun, physical activites! Please watch your feet as you exit the bus."
     hide peter_left_default
     "{i} We leave the bus and enter the ARC. {/i}"
-
 
     #Start building #4
     show jason_left_excited at left
     j "Come on let’s check it out!"
     #(a different visual from inside the ARC)
     "{i} We enter the building. {/i}"
+
+    scene ARC_inside1
+    with fade
+
     MC "Woah! Look at that gym and the indoor courts! They're massive!"
     show vivian_right_excited at right
     viv "Hey check this out!"
-    #(a picture of the entry hand scanner system)
+
+    "{i}Vivian gestures to the entry hand scanner system{/i}"
+
     viv "What a neat entry system! It says here that all freshmen have to sign up here before entering the ARC. You’re supposed to punch in your UCI student ID and then scan your hand for entry. This is pretty cool!"
     MC "It also says that we can get our friends in too by getting an ARC day pass."
     j "Really?! I’ll be bringing my friends over to play ball with me all the time!"
     MC "Yeah! Let’s go check out what other activities and sports we can play in here."
 
-    #( a few pictures of the gym, lockers, swimming pool, basketball courts, squash courts etc.)
-    #(some banter to make it look like a conversation)
+    scene ARC_inside2
+    with fade
+
     viv "Look! There's a swimming pool out back! Let's all go for a dip someday!"
     j "I'm not much of a swimmer but I'm down! Did you see the racquetball courts though? Those glass walls look so amazing. You can even turn them into volleyball courts!"
     MC "They have so many activities we could spend all day here. Let's take a look at the ARC’s {a=https://www.campusrec.uci.edu/arc/facilities.asp}facilities map{/a}."
