@@ -374,7 +374,7 @@ label q1q2:
         "Trick question, we don’t. Financial aid is awarded automatically":
             jump q1q3
 
-        "Apply from MyAid section at {a=https://www.ofas.uci.edu/index.php}https://www.ofas.uci.edu/{/a}":
+        "Apply from MyAid section at: www.ofas.uci.edu":
             $ q1result += 1
             jump q1q3
 
@@ -913,7 +913,7 @@ label q1result:
                 "First come first serve policy":
                     jump q3result
 
-                "Book them through {a=https://www.lib.uci.edu/study-space-locator}https://www.lib.uci.edu/study-space-locator{/a}":
+                "Book them through: www.lib.uci.edu/study-space-locator":
                     $ q3result += 1
                     jump q3result
 
@@ -958,7 +958,7 @@ label q1result:
     hide peter_left_default
     "{i} Walks out of the library and sees Vivian and Jason leaving the opposite building. Vivian spots [name] and waves. {/i}"
 
-    show vivian_left_excited at left
+    show vivian_left_happy at left
     viv "Hey [name]! Did you get stopped and quizzed too?"
     MC "Yeah, I had to learn everything about all the study resources."
     show jason_right_happy at right
@@ -1158,16 +1158,52 @@ label q1result:
 
             jump q4q1
 
+        p "Congratulations! You passed all the quizzes. Welcome to UCI!"
+
+        "{i}You can't help but feel a wave of accomplishment, but also a little sadness{/i}"
+
+        MC "So what happens to you now?"
+
+        p "I am going back to welcome the next wave of students. This is part of
+        the new, never before seen orientation package for the 2021-2022 academic year."
+
+        viv "Wait...you mean we tried so hard to pass those quizzes but that was all part of the plan?"
+
+        p "Bye now!"
+
+        "{i}Zot... Zot.. Zot.{/i}"
+
         hide peter_right_happy
-        show peter_left_evil
 
-        p "You were successful this time, but will you be for the future quizzes?"
+        show jason_left_excited at left
+        show vivian_right_excited at right
 
-        p "See you real soon!"
+        MC "I can’t believe we made it. We passed all the quizzes!"
 
-        hide peter_left_evil
+        j "Yeah, that was challenging to say the least."
 
+        viv "I think we’ll remember all of this important information for a long time."
 
+        j "For sure! I've never done anything like this before."
+
+        MC "I think UCI is really good at getting our attention."
+
+        show jason_left_poker at left
+
+        j "Yeah. Well, all that effort for nothing."
+
+        viv "Maybe the real reward is the UCI experience."
+
+        hide jason_left_poker
+
+        MC "Maybe the real reward is the friendship we make along the way."
+
+        j "Maybe the friendship is part of the UCI experience too!"
+
+        viv "You’re right. I’m so happy that I chose to attend UCI.
+        I’m sure I made the right choice!"
+
+        MC "Me too. UCI is the best school ever!"
 
     # This ends the game.
 

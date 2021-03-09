@@ -1,68 +1,18 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
-While processing text tag {name} in u'{i} Walks out of the library and sees Vivian and Jason leaving the opposite building. Vivian spots {name} and waves. {/i}'.:
-  File "game/script.rpy", line 958, in script
-    "{i} Walks out of the library and sees Vivian and Jason leaving the opposite building. Vivian spots {name} and waves. {/i}"
-Exception: Unknown text tag u'name'
+While running game code:
+  File "game/script.rpy", line 1185, in script
+    v "I think we’ll remember all of this important information for a long time."
+Exception: Sayer 'v' is not defined.
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 958, in script
-    "{i} Walks out of the library and sees Vivian and Jason leaving the opposite building. Vivian spots {name} and waves. {/i}"
-  File "renpy/ast.py", line 715, in execute
-    renpy.exports.say(who, what, *args, **kwargs)
-  File "renpy/exports.py", line 1384, in say
-    who(what, *args, **kwargs)
-  File "renpy/character.py", line 1179, in __call__
-    self.do_display(who, what, cb_args=self.cb_args, dtt=dtt, **display_args)
-  File "renpy/character.py", line 851, in do_display
-    **display_args)
-  File "renpy/character.py", line 601, in display_say
-    rv = renpy.ui.interact(mouse='say', type=type, roll_forward=roll_forward)
-  File "renpy/ui.py", line 298, in interact
-    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
-  File "renpy/display/core.py", line 3007, in interact
-    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, **kwargs)
-  File "renpy/display/core.py", line 3517, in interact_core
-    self.draw_screen(root_widget, fullscreen_video, (not fullscreen_video) or video_frame_drawn)
-  File "renpy/display/core.py", line 2377, in draw_screen
-    renpy.config.screen_height,
-  File "render.pyx", line 492, in renpy.display.render.render_screen
-  File "render.pyx", line 263, in renpy.display.render.render
-  File "renpy/display/layout.py", line 751, in render
-    surf = render(child, width, height, cst, cat)
-  File "render.pyx", line 170, in renpy.display.render.render
-  File "render.pyx", line 263, in renpy.display.render.render
-  File "renpy/display/layout.py", line 751, in render
-    surf = render(child, width, height, cst, cat)
-  File "render.pyx", line 170, in renpy.display.render.render
-  File "render.pyx", line 263, in renpy.display.render.render
-  File "renpy/display/layout.py", line 751, in render
-    surf = render(child, width, height, cst, cat)
-  File "render.pyx", line 170, in renpy.display.render.render
-  File "render.pyx", line 263, in renpy.display.render.render
-  File "renpy/display/screen.py", line 681, in render
-    child = renpy.display.render.render(self.child, w, h, st, at)
-  File "render.pyx", line 170, in renpy.display.render.render
-  File "render.pyx", line 263, in renpy.display.render.render
-  File "renpy/display/layout.py", line 751, in render
-    surf = render(child, width, height, cst, cat)
-  File "render.pyx", line 170, in renpy.display.render.render
-  File "render.pyx", line 263, in renpy.display.render.render
-  File "renpy/display/layout.py", line 1156, in render
-    st, at)
-  File "render.pyx", line 170, in renpy.display.render.render
-  File "render.pyx", line 263, in renpy.display.render.render
-  File "renpy/text/text.py", line 2033, in render
-    virtual_layout = Layout(self, width, height, renders, drawable_res=False, size_only=True)
-  File "renpy/text/text.py", line 607, in __init__
-    self.paragraphs = self.segment(text.tokens, style, renders, text)
-  File "renpy/text/text.py", line 1218, in segment
-    raise Exception("Unknown text tag %r" % text)
-Exception: Unknown text tag u'name'
+  File "game/script.rpy", line 1185, in script
+    v "I think we’ll remember all of this important information for a long time."
+  File "renpy/ast.py", line 671, in execute
+    who = eval_who(self.who, self.who_fast)
+  File "renpy/ast.py", line 574, in eval_who
+    raise Exception("Sayer '%s' is not defined." % who)
+Exception: Sayer 'v' is not defined.
 
-Windows-10-10.0.19041
-Ren'Py 7.4.2.1292
-UCI Visual Novel 1.0
-Mon Mar  8 11:22:51 2021
